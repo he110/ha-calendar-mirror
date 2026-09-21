@@ -58,16 +58,25 @@ def make_event(
     return MirrorEvent(
         uid=target_uid(pair_id, key),
         summary=f"{summary_prefix}{summary}".strip(),
-        start=start,
-        end=end,
+        start=_to_minute(start),
+        end=_to_minute(end),
         description=(description or "").strip(),
         location=(location or "").strip(),
     )
 
 
-def _norm_time(value: dt.date | dt.datetime) -> str:
+def _to_minute(value: dt.date | dt.datetime) -> dt.date | dt.datetime:
+    """Яндекс хранит время с точностью до минуты: 15:51:37 читается обратно как 15:51.
+    Без этого событие с секундами считалось бы изменённым в каждом цикле."""
     if isinstance(value, dt.datetime):
-        return value.astimezone(dt.UTC).replace(microsecond=0).isoformat()
+        return value.replace(second=0, microsecond=0)
+    return value
+
+
+def _norm_time(value: dt.date | dt.datetime) -> str:
+    value = _to_minute(value)
+    if isinstance(value, dt.datetime):
+        return value.astimezone(dt.UTC).isoformat()
     return value.isoformat()
 
 
