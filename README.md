@@ -1,5 +1,11 @@
 # Calendar Mirror для Home Assistant
 
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/)
+[![Validate](https://github.com/he110/ha-calendar-mirror/actions/workflows/validate.yaml/badge.svg)](https://github.com/he110/ha-calendar-mirror/actions/workflows/validate.yaml)
+
+[![Открыть репозиторий в HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=he110&repository=ha-calendar-mirror&category=integration)
+[![Добавить интеграцию Calendar Mirror.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=calendar_mirror)
+
 Синхронизирует **любой** календарь Home Assistant с календарём в Яндексе, чтобы Алиса
 знала о ваших событиях: «Алиса, какие события сегодня?».
 
@@ -39,11 +45,13 @@
 
 ## Установка
 
-1. HACS → ⋮ → Custom repositories → `https://github.com/he110/ha-calendar-mirror`,
-   категория **Integration** → установить → перезапустить HA.
+1. Нажать кнопку **Open in HACS** вверху (или вручную: HACS → ⋮ → Custom repositories →
+   `https://github.com/he110/ha-calendar-mirror`, категория **Integration**) →
+   установить → перезапустить HA.
 2. Создать пароль приложения: Яндекс ID → Безопасность → **Пароли приложений** →
    «Календарь». Новый пароль может заработать не сразу.
-3. Настройки → Устройства и службы → Добавить интеграцию → **Calendar Mirror**:
+3. Кнопка **Add integration** вверху (или Настройки → Устройства и службы →
+   Добавить интеграцию → **Calendar Mirror**):
    адрес `https://caldav.yandex.ru/`, логин — адрес Яндекс-почты, пароль приложения.
 4. В карточке интеграции → **Добавить пару**: источник, целевой календарь, короткий id.
 5. Дать Алисе доступ к целевому календарю: приложение «Дом с Алисой» →
