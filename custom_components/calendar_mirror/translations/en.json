@@ -47,7 +47,7 @@
             "summary_prefix": "Префикс к названию события"
           },
           "data_description": {
-            "slug": "Из него собираются entity_id: switch.calendar_mirror_<id>. Пусто — возьмётся из источника (calendar.family → family).",
+            "slug": "Из него собираются entity_id: для id «family» — switch.calendar_mirror_family. Пусто — возьмётся из источника (calendar.family → family).",
             "summary_prefix": "Например «[Дом] ». Полезно, если в один календарь льются несколько источников."
           }
         },
